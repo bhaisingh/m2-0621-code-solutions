@@ -1,4 +1,14 @@
+const timer = function () {
+    currentImage += 1;
+    if (currentImage >= $images.length) {
+        currentImage = 0;
+    }
+    renderImage(currentImage);
+}
+
 let currentImage = 0;
+let timerID = setInterval(timer, 3000);
+
 const $images = document.querySelectorAll(".image");
 const $dots = document.querySelectorAll(".dot");
 const $next = document.querySelector(".next");
@@ -22,6 +32,8 @@ const next = function () {
     if (currentImage >= $images.length) {
         currentImage = 0;
     }
+    clearInterval(timerID);
+    timerID = setInterval(timer, 3000);
     renderImage(currentImage);
 }
 
@@ -30,11 +42,15 @@ const prev = function () {
     if (currentImage < 0) {
         currentImage = $images.length - 1;
     }
+    clearInterval(timerID);
+    timerID = setInterval(timer, 3000);
     renderImage(currentImage);
 }
 
 const dotImage = function (dot, index) {
     dot.addEventListener('click', function () {
+        clearInterval(timerID);
+        timerID = setInterval(timer, 3000);
         currentImage = index;
         renderImage(index);
     })
@@ -46,10 +62,4 @@ $prev.addEventListener('click', prev);
 
 $dots.forEach(dotImage) 
 
-setInterval(function() { 
-    currentImage += 1;
-    if (currentImage >= $images.length) {
-        currentImage = 0;
-    }
-    renderImage(currentImage);
- }, 3000);
+
