@@ -1,0 +1,99 @@
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+body h1 {
+    text-align: center;
+}
+
+.caro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.caro-container .image {
+    display: none;
+    width: 100%;
+}
+
+.caro-container .image .fade {
+    animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.caro-container .image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+}
+
+.caro-container .prev, 
+.caro-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 50px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.caro-container .prev:hover,
+.caro-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.caro-container .prev {
+    left: 2px;
+}
+
+.caro-container .next {
+    right: 2px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dots-container .dot {
+    cursor: pointer;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    color: rgb(206, 24, 24);
+    border-radius: 50%;
+    background-color: #dfd6ce;
+}
+
+.dots-container .dot.active {
+    border: 2px solid blue;
+    background-color: blue;
+}
