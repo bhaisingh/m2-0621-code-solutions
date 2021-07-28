@@ -3,14 +3,14 @@ const $flashImage = document.querySelector('#flash-image');
 const $jokeForm = document.querySelector('#joke-form');
 
 const jokester = {
-  tellJoke: function (setup, punchline) {
+   tellJoke: function(setup, punchline) {
     $jokeForm.classList.add('d-none');
     const $introStatement = this.renderJokePhrase('Hey Flash...');
     this.appendJokePhrase($introStatement);
-    setTimeout(function () {
+    setTimeout( () => {
       const $jokeSetup = this.renderJokePhrase(setup);
       this.appendJokePhrase($jokeSetup);
-      setTimeout(function () {
+      setTimeout( () => {
         const $jokePunchline = this.renderJokePhrase(punchline);
         this.appendJokePhrase($jokePunchline);
         flash.laugh();
@@ -31,7 +31,7 @@ const jokester = {
 const flash = {
   laughingUrl: 'images/flash-laugh.gif',
   laugh: function () {
-    setTimeout(function () {
+    setTimeout( () => {
       $flashImage.setAttribute('src', this.laughingUrl);
     }, 3000);
   }
