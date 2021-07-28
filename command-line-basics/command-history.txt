@@ -1,0 +1,310 @@
+    1  git config -global user.name "Rakesh Singh"
+    2  git config --global user.name "Rakesh Singh"
+    3  git config --global user.email "bhaisingh@gmail.com"
+    4  git config --global --list
+    5  clear
+    6  git config --global --list
+    7  git
+    8  ls -l
+    9  clear
+   10  git
+   11  git branch
+   12  clear
+   13  branch
+   14  git
+   15  git clone
+   16  ls
+   17  git clone https://github.com/bhaisingh/m2-0621-code-solutions.git
+   18  ls
+   19  path
+   20  pwd
+   21  cd repos
+   22  ls -l
+   23  cd ..
+   24  ls -l
+   25  del m2-0621-code-solutions
+   26  rm -r m2-0621-code-solutions
+   27  rm m2-0621-code-solutions
+   28  rmdir m2-0621-code-solutions
+   29  rm -rf m2-0621-code-solutions
+   30  clear
+   31  ls 
+   32  cd repos
+   33  git clone https://github.com/bhaisingh/m2-0621-code-solutions.git
+   34  cd m2-0621-code-solutions/
+   35  git status
+   36  git branch javascript-custom-methods
+   37  git switch javascript-custom-methods
+   38  git status
+   39  git add javascript-custom-methods/
+   40  git status
+   41  git commit -m "Completed javascript-custom-methods."
+   42  git push origin javascript-custom-methods 
+   43  git checkout master
+   44  git switch master
+   45  git pull origin master
+   46  git pull origin javascript-custom-methods
+   47  git status
+   48  git pull origin master
+   49  git status
+   50  git pull origin master
+   51  git status
+   52  clear
+   53  git status
+   54  git switch master
+   55  git branch javascript-this
+   56  git switch javascript-this
+   57  git status
+   58  git add javascript-this/
+   59  git status
+   60  git commit -m "Completed javascript-this."
+   61  git push origin javascript-this
+   62  git checkout master
+   63  git status
+   64  git pull origin master
+   65  git branch javascript-prototypes
+   66  git switch javascript-prototypes 
+   67  git status
+   68  git add javascript-prototypes/
+   69  git status
+   70  git commit -m "Completed javascript-prototypes."
+   71  git push origin javascript-prototypes
+   72  git checkout master
+   73  git status
+   74  git pull origin master
+   75  git status
+   76  git branch javascript-constructors
+   77  git checkout javascript-constructors 
+   78  git status
+   79  git add javascript-constructors/
+   80  git commit -m "Completed javascript-constructors."
+   81  git push origin master
+   82  git push origin javascript-constructors
+   83  git status
+   84  git checkout master
+   85  git status
+   86  git pull origin master
+   87  git status
+   88  git branch javascript-bank
+   89  git checkout javascript-bank
+   90  git status
+   91  git add javascript-bank/
+   92  git commit -m "Completed javascript-bank."
+   93  git push origin javascript-bank
+   94  git checkout master
+   95  git status
+   96  git branch javascript-timers
+   97  git checkout javascript-timers
+   98  git add javascript-timers/
+   99  git commit -m "Completed javascript-timers."
+  100  git push origin javascript-timers
+  101  git checkout master
+  102  git checkout javascript-bank
+  103  git status
+  104  git add javascript-bank/
+  105  git commit -m "Fixed return statement in a function and utilize encapsulation to get total assets."
+  106  git push origin master
+  107  git push origin javascript-bank
+  108  git checkout master
+  109  git pull origin master
+  110  git status
+  111  git pull origin master
+  112  git status
+  113  git checkout -b javascript-carousel
+  114  git status
+  115  git add javascript-carousel/
+  116  git commit -m "Completed Javascript-Carousel."
+  117  git push origin javascript-carousel
+  118  git checkout master
+  119  ls
+  120  cd ..
+  121  ls -l
+  122  git clone https://github.com/bhaisingh/driving-game.git
+  123  ls -l
+  124  cd m2-0621-code-solutions/
+  125  git status
+  126  clear
+  127  ls -l
+  128  git checkout javascript-carousal
+  129  git status
+  130  clear
+  131  git checkout javascript-carousel
+  132  ls -l
+  133  clear
+  134  git status
+  135  git add javascript-carousel/
+  136  git commit -m "Fixed issue - reset auto interval when user manually changes the active slide by clicking the dots or prev/next."
+  137  git push origin master
+  138  git push origin javascript-carousel
+  139  git status
+  140  git pull origin master
+  141  git status
+  142  clear
+  143  git status
+  144  git checkout master
+  145  git pull origin master
+  146  git status
+  147  clear
+  148  ls
+  149  cd repos
+  150  ls -l
+  151  cd driving-game
+  152  git status
+  153  clear
+  154  http http://www.example.com
+  155  clear
+  156  http https://example.com
+  157  clear
+  158  http --verbose https://example.com
+  159  clear
+  160  cd repos
+  161  ls -l
+  162  cd driving-game/
+  163  ls -l
+  164  git checkout issue-5-steer-car 
+  165  git status
+  166  git add .
+  167  git commit -m "Completed issue-5 user can steer the car."
+  168  git push origin issue-5-steer-car
+  169  git checkout master
+  170  git status
+  171  git pull origin master
+  172  git status
+  173  clear
+  174  http www.yahoo.com
+  175  http www.google.com
+  176  clear
+  177  GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: f6915872318e4c9985242156884d4b92
+  178  http https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: f6915872318e4c9985242156884d4b92
+  179  http https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: [f6915872318e4c9985242156884d4b92]
+  180  clear
+  181  GET https://haveibeenpwned.com/api/v3/dataclasses
+  182  http GET https://haveibeenpwned.com/api/v3/dataclasses
+  183  clear
+  184  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: f6915872318e4c9985242156884d4b92
+  185  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: [f6915872318e4c9985242156884d4b92]
+  186  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key: "f6915872318e4c9985242156884d4b92"
+  187  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com
+  188  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key:"f6915872318e4c9985242156884d4b92"
+  189  http GET https://api.pwnedpasswords.com/
+  190  http GET https://api.pwnedpasswords.com/?
+  191  http GET https://api.pwnedpasswords.com/range/70CCD9007338D6D81DD3B6271621B9CF9A97EA00
+  192  http GET https://api.pwnedpasswords.com/range/70CCD
+  193  clear
+  194  GET https://haveibeenpwned.com/api/v3/breachedaccount/{account} hibp-api-key: [your key]
+  195  http GET https://haveibeenpwned.com/api/v3/breachedaccount/{account} hibp-api-key: [your key]
+  196  http GET https://haveibeenpwned.com/api/v3/breachedaccount/?domain=yahoo.com hibp-api-key:"f6915872318e4c9985242156884d4b92"
+  197  http GET https://haveibeenpwned.com/api/v3/breachedaccount?domain=yahoo.com hibp-api-key:"f6915872318e4c9985242156884d4b92"
+  198  http GET https://haveibeenpwned.com/api/v3/breachedaccount/domain=yahoo.com hibp-api-key:"f6915872318e4c9985242156884d4b92"
+  199  http GET https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com?domain=evite.com hibp-api-key:"f6915872318e4c9985242156884d4b92"
+  200  http GET https://haveibeenpwned.com/api/v3/breaches
+  201  http GET https://haveibeenpwned.com/api/v3/breach/evite.com
+  202  http GET https://haveibeenpwned.com/api/v3/breaches?domain=evite.com
+  203  http get https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key:'f6915872318e4c9985242156884d4b92'
+  204  http get https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key:f6915872318e4c9985242156884d4b92
+  205  http get https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com  hibp-api-key:f6915872318e4c9985242156884d4b92
+  206  http get https://lfz-cors.herokuapp.com/?url=https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com%20%20hibp-api-key:f6915872318e4c9985242156884d4b92
+  207  http get https://lfz-cors.herokuapp.com/?url=https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key:f6915872318e4c9985242156884d4b92
+  208  http get https://lfz-cors.herokuapp.com/?url=https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com_hibp-api-key:f6915872318e4c9985242156884d4b92
+  209  http get https://lfz-cors.herokuapp.com/?url=https://haveibeenpwned.com/api/v3/breachedaccount/rasun@yahoo.com hibp-api-key:f6915872318e4c9985242156884d4b92
+  210  http get 'https://whois-lookup-domain-whois-whois-record.p.rapidapi.com/whois'
+  211  cd repos
+  212  ls
+  213  git clone https://github.com/bhaisingh/ajax-project.git
+  214  ls
+  215  cd ajax-project
+  216  cls
+  217  clear
+  218  npm ci
+  219  checkout -b issue-1-check-email
+  220  git checkout -b issue-1-check-email-breach
+  221  git status
+  222  git add .
+  223  git status
+  224  git commit -m "initial commit html & CSS"
+  225  git status
+  226  clear
+  227  git status
+  228  ls -l
+  229  cd repos
+  230  cls
+  231  clear
+  232  ls -l
+  233  cd m2-0621-code-solutions/
+  234  clear
+  235  pwd
+  236  man man
+  237  man cat
+  238  cat laziness.txt
+  239  ls -l
+  240  clear
+  241  cd command-line-basics/
+  242  clear
+  243  pwd
+  244  man man
+  245  man cat
+  246  cat laziness.txt
+  247  ls -l
+  248  cd command-line-basics/
+  249  cd repos
+  250  cd m2-0621-code-solutions/
+  251  dir
+  252  cd command-line-basics
+  253  dir
+  254  clear
+  255  pwd
+  256  man man
+  257  man cat
+  258  cat laziness.txt
+  259  cat impatience.txt
+  260  cat hubris.txt
+  261  cat laziness.txt impatience.txt hubris.txt
+  262  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  263  cat three-virtues.txt
+  264  man ls
+  265  ls
+  266  ls -a
+  267  ls -f
+  268  ls lfz-staff/
+  269  ls lfz-staff/ -a
+  270  ls lfz-staff/ -f
+  271  ls lfz-staff/ -F
+  272  ls -aF lfz-staff > lfz-staff/contents.txt
+  273  cat lfz-staff/contents.txt 
+  274  man pwd
+  275  pwd
+  276  pwd > i-was-here.txt
+  277  ls
+  278  cat i-was-here.txt 
+  279  man echo
+  280  echo 'Hello World!'
+  281  echo 'Hello, World!' > hello.txt
+  282  ls
+  283  cat hello.txt
+  284  man touch
+  285  touch tag-youre-it.txt
+  286  touch snoot/boop.txt
+  287  ls snoot/
+  288  man mkdir
+  289  mkdir parent
+  290  ls parent/
+  291  ls
+  292  mkdir -p parent/child/grandchild
+  293  touch parent/child/grandchild/.gitkeep
+  294  ls -a parent/child/grandchild/
+  295  man mv
+  296  mv pokiemans pokemon
+  297  ls
+  298  man rm
+  299  rm lol.txt
+  300  ls
+  301  rm -r kill-me/
+  302  ls
+  303  man cp
+  304  cp and-then.txt no-and-then.txt
+  305  ls
+  306  cat and-then.txt 
+  307  cat no-and-then.txt 
+  308  man history
+  309  history
+  310  history > command-history.txt
