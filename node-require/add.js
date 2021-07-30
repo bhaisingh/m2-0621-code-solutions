@@ -1,5 +1,5 @@
 const add = (x, y) => {
-    return parseInt(x)  +  parseInt(y);
+    return parseFloat(x)  +  parseFloat(y);
 };
 
 module.exports = add;

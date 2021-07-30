@@ -1,5 +1,5 @@
 const multiply = (x, y) => {
-    return x * y;
+    return parseFloat(x) * parseFloat(y);
 };
 
 module.exports = multiply;
