@@ -1,0 +1,51 @@
+const express = require('express')
+const app = express()
+
+const grades = {
+    12: {
+      id: 12,
+      name: 'Tim Berners-Lee',
+      course: 'HTML',
+      score: 95
+    },
+    47: {
+      id: 47,
+      name: 'Brendan Eich',
+      course: 'JavaScript',
+      score: 100
+    },
+    273: {
+      id: 273,
+      name: 'Forbes Lindsay',
+      course: 'JavaScript',
+      score: 92
+    }
+  }
+
+  
+let gradeOut = []
+
+app.get('/api/grades', function (req, res) {
+    if (gradeOut.length === 0) {
+        for (let grade in grades) {
+            gradeOut.push(grades[grade]);
+        }
+    }
+    res.json(gradeOut);
+})
+
+app.delete('/api/grades/:id', function (req, res) {
+    console.log('parm value: ', req.params.id)
+    for (let i = 0 ; i < gradeOut.length ; i++) {
+        console.log('gradeOut: ', gradeOut[i])
+        if (gradeOut[i].id === parseInt(req.params.id)) {
+            gradeOut.splice(i, 1);
+        }
+    }
+    res.sendStatus(204);
+})
+
+
+app.listen(3000, () => {
+    console.log('Express server listening on port 3000!');
+});
