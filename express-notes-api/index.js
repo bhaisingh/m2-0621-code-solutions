@@ -86,7 +86,7 @@ app.post('/api/notes', (req, res) => {
                 let nextId = content.nextId
                 content.notes[nextId] = writeObj;
                 content.nextId++;
-                data = JSON.stringify(content);
+                data = JSON.stringify(content, null, 2);
                 fs.writeFile(inputFileName, data, (err) => {
                     if (err) {
                         res.status(500);
@@ -117,16 +117,16 @@ app.delete('/api/notes/:id', (req, res) => {
             if (err) {
                 console.log("Error reading File:",  err);
             } try {
-                const content = JSON.parse(data);
-                const notesValue ;
+                let content = JSON.parse(data);
+                let notesValue ;
                 for (const outObj in content.notes) {
                     if (content.notes[outObj].id === parseInt(req.params.id)) {
                         notesValue = content.notes[outObj];
                         delete content.notes[outObj];
                     }
                 }
-                content = JSON.stringify(content);
-                fs.writeFile(inputFileName, data, (err) => {
+                content = JSON.stringify(content, null, 2);
+                fs.writeFile(inputFileName, content, (err) => {
                     if (err) {
                         res.status(500);
                         res.json({
@@ -160,16 +160,16 @@ app.put('/api/notes/:id', (req, res) => {
             if (err) {
                 console.log("Error reading File:",  err);
             } try {
-                const content = JSON.parse(data);
-                const notesValue ;
+                let content = JSON.parse(data);
+                let notesValue ;
                 for (const outObj in content.notes) {
                     if (content.notes[outObj].id === parseInt(req.params.id)) {
                         content.notes[outObj].content = req.body.content;
                         notesValue = content.notes[outObj];
                     }
                 }
-                content = JSON.stringify(content);
-                fs.writeFile(inputFileName, data, (err) => {
+                content = JSON.stringify(content, null, 2);
+                fs.writeFile(inputFileName, content, (err) => {
                     if (err) {
                         res.status(500);
                         res.json({
