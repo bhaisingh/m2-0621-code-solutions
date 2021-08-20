@@ -140,7 +140,7 @@ app.delete('/api/notes/:id', (req, res) => {
                     } else {
                         res.sendStatus(204);
                     }
-                }
+                })
             } catch (err) {
                 console.log("Error parsing JSON string: ", err);
             } 
@@ -149,6 +149,48 @@ app.delete('/api/notes/:id', (req, res) => {
     }
 })
 
+// Clients can replace a note (PUT) by id.
+
+app.put('/api/notes/:id', (req, res) => {
+    if (parseInt(req.params.id) <= 0 &&  typeof req.params.id !== 'number' && req.params.id % 1 !== 0 && req.body.content === undefined) {
+        res.status(400);
+        res.json({"error": "id must be a positive number"})
+    } else {
+        fs.readFile(inputFileName, 'utf8', (err, data) => {
+            if (err) {
+                console.log("Error reading File:",  err);
+            } try {
+                const content = JSON.parse(data);
+                const notesValue ;
+                for (const outObj in content.notes) {
+                    if (content.notes[outObj].id === parseInt(req.params.id)) {
+                        content.notes[outObj].content = req.body.content;
+                        notesValue = content.notes[outObj];
+                    }
+                }
+                content = JSON.stringify(content);
+                fs.writeFile(inputFileName, data, (err) => {
+                    if (err) {
+                        res.status(500);
+                        res.json({
+                            "error": "An unexpected error occurred."
+                        })
+                    } else if (notesValue === undefined) {
+                        res.status(404);
+                        res.json({
+                            "error": `note with id ${req.params.id} does not exist`
+                        })
+                    } else {
+                        res.status(200);
+                        res.json(notesValue);
+                    }
+                })
+            } catch (err) {
+                console.log("Error parsing JSON string: ", err);
+            } 
+        })
+    }
+})
 
 
 app.listen(3000, () => {
