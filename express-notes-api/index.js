@@ -9,7 +9,8 @@ app.get('/api/notes', (req, res) => {
 
     fs.readFile(inputFileName, 'utf8', (err, data) => {
         if (err) {
-            console.log("Error reading File:",  err);
+            res.status(500);
+            res.json({"error": "Error reading data file"})
         } try {
             const content = JSON.parse(data);
             const outArray = [];
@@ -22,7 +23,9 @@ app.get('/api/notes', (req, res) => {
             res.status(200)
             res.json(outArray);
         } catch (err) {
-            console.log("Error parsing JSON string: ", err);
+            res.status(500);
+            res.json({"error": "Error parsing JSON string"})
+            
         } 
     });
 })
@@ -38,7 +41,8 @@ app.get('/api/notes/:id', (req, res) => {
     } else {
         fs.readFile(inputFileName, 'utf8', (err, data) => {
             if (err) {
-                console.log("Error reading File:",  err);
+                res.status(500);
+                res.json({"error": "Error reading data file"})
             } try {
                 const content = JSON.parse(data);
                 const outArray = [];
@@ -58,7 +62,8 @@ app.get('/api/notes/:id', (req, res) => {
                     res.json({"error": "cannot find note with id " + req.params.id})
                 }
             } catch (err) {
-                console.log("Error parsing JSON string: ", err);
+                res.status(500);
+                res.json({"error": "Error parsing JSON string"})
             } 
             
         })
@@ -76,7 +81,8 @@ app.post('/api/notes', (req, res) => {
     } else {
         fs.readFile(inputFileName, 'utf8', (err, data) => {
             if (err) {
-                console.log("Error reading File:",  err);
+                res.status(500);
+                res.json({"error": "Error reading data file"})
             } try {
                 const content = JSON.parse(data);
                 const writeObj = {
@@ -99,7 +105,8 @@ app.post('/api/notes', (req, res) => {
                     }
                 })
             } catch (err) {
-                console.log("Error parsing JSON string: ", err);
+                res.status(500);
+                res.json({"error": "Error parsing JSON string"})
             } 
         })
     }
@@ -115,7 +122,8 @@ app.delete('/api/notes/:id', (req, res) => {
     } else {
         fs.readFile(inputFileName, 'utf8', (err, data) => {
             if (err) {
-                console.log("Error reading File:",  err);
+                res.status(500);
+                res.json({"error": "Error reading data file"})
             } try {
                 let content = JSON.parse(data);
                 let notesValue ;
@@ -142,7 +150,8 @@ app.delete('/api/notes/:id', (req, res) => {
                     }
                 })
             } catch (err) {
-                console.log("Error parsing JSON string: ", err);
+                res.status(500);
+                res.json({"error": "Error parsing JSON string"})
             } 
             
         })
@@ -158,7 +167,8 @@ app.put('/api/notes/:id', (req, res) => {
     } else {
         fs.readFile(inputFileName, 'utf8', (err, data) => {
             if (err) {
-                console.log("Error reading File:",  err);
+                res.status(500);
+                res.json({"error": "Error reading data file"})
             } try {
                 let content = JSON.parse(data);
                 let notesValue ;
@@ -186,7 +196,8 @@ app.put('/api/notes/:id', (req, res) => {
                     }
                 })
             } catch (err) {
-                console.log("Error parsing JSON string: ", err);
+                res.status(500);
+                res.json({"error": "Error parsing JSON string"})
             } 
         })
     }
