@@ -182,19 +182,21 @@ app.put('/api/notes/:id', (req, res) => {
                             notesValue = content.notes[outObj];
                         }
                     }
-                    content = JSON.stringify(content, null, 2);
-                    fs.writeFile(inputFileName, content, (err) => {
-                        if (err) {
-                            res.status(500);
-                            res.json({"error": "An unexpected error occurred."})
-                        } else if (notesValue === undefined) {
-                            res.status(404);
-                            res.json({"error": `note with id ${req.params.id} does not exist`})
-                        } else {
-                            res.status(200);
-                            res.json(notesValue);
-                        }
-                    })
+                    if (notesValue === undefined) {
+                        res.status(404);
+                        res.json({"error": `note with id ${req.params.id} does not exist`})
+                    } else {
+                        content = JSON.stringify(content, null, 2);
+                        fs.writeFile(inputFileName, content, (err) => {
+                            if (err) {
+                                res.status(500);
+                                res.json({"error": "An unexpected error occurred."})
+                            } else {
+                                res.status(200);
+                                res.json(notesValue);
+                            }
+                        })
+                    }
                 } catch (err) {
                     res.status(500);
                     res.json({"error": "Error parsing JSON string"})
