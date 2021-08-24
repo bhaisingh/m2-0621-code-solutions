@@ -1,5 +1,5 @@
 {
-  "nextId": 11,
+  "nextId": 12,
   "notes": {
     "2": {
       "id": 2,
@@ -11,11 +11,11 @@
     },
     "9": {
       "id": 9,
-      "content": "Inertia is a property of matter."
+      "content": "Inertia is a property of matter. - Albert Einstein"
     },
-    "10": {
-      "content": "Nothing happens until something moves. - Albert Einstein",
-      "id": 10
+    "11": {
+      "content": "Life is like riding a bicycle. To keep your balance you must keep moving.",
+      "id": 11
     }
   }
 }
