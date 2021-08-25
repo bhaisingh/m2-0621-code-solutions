@@ -1,3 +1,3 @@
-select "actorId", "firstName", "lastName"
+select *
 from "actors"
 where "actorId" = 40
