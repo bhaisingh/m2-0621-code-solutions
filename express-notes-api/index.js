@@ -36,7 +36,7 @@ app.get('/api/notes', (req, res) => {
 
 
 app.get('/api/notes/:id', (req, res) => {
-    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || parseInt(req.params.id) % 1 !== 0) {
+    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || req.params.id % 1 !== 0) {
         res.status(400);
         res.json({"error": "id must be a positive number"})
     } else {
@@ -118,7 +118,7 @@ app.post('/api/notes', (req, res) => {
 // Clients can DELETE a note by id.
 
 app.delete('/api/notes/:id', (req, res) => {
-    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || parseInt(req.params.id) % 1 !== 0) {
+    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || req.params.id % 1 !== 0) {
         res.status(400);
         res.json({"error": "id must be a positive number"})
     } else {
@@ -160,7 +160,7 @@ app.delete('/api/notes/:id', (req, res) => {
 // Clients can replace a note (PUT) by id.
 
 app.put('/api/notes/:id', (req, res) => {
-    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || parseInt(req.params.id) % 1 !== 0) {
+    if (parseInt(req.params.id) <= 0 || typeof parseInt(req.params.id) !== 'number' || req.params.id % 1 !== 0) {
         res.status(400);
         if (req.body.content === undefined) {
             res.json({"error": "Content is a required parameter"})
