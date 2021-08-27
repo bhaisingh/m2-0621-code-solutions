@@ -1,0 +1,21 @@
+{
+  "nextId": 12,
+  "notes": {
+    "2": {
+      "id": 2,
+      "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScript."
+    },
+    "5": {
+      "id": 5,
+      "content": "In JavaScript, the value of `this` is determined when a function is called; not when it is defined."
+    },
+    "9": {
+      "id": 9,
+      "content": "Inertia is a property of matter. - Albert Einstein"
+    },
+    "11": {
+      "content": "Life is like riding a bicycle. To keep your balance you must keep moving.",
+      "id": 11
+    }
+  }
+}
