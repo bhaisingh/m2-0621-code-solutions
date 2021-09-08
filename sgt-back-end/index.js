@@ -51,7 +51,7 @@ app.use(express.json());
 //nserts a new grade into the "grades" table and returns the created grade.
 app.post('/api/grades', (req, res, next) => {
     if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || 
-        typeof parseInt(req.body.score) !== 'number' || req.body.score % 1 !== 0 || req.body.score < 1 || req.body.score > 100 ) {
+        req.body.score % 1 !== 0 || req.body.score < 0 || req.body.score > 100 ) {
             res.status(400).json({
                 error: 'Request parameter are not correct'
             })
@@ -81,14 +81,14 @@ app.post('/api/grades', (req, res, next) => {
 // updates a grade in the "grades" table and returns the updated grade
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
-    if (parseInt(req.params.gradeId) <= 0 || typeof parseInt(req.params.gradeId) !== 'number' || req.params.gradeId % 1 !== 0) {
+    if (parseInt(req.params.gradeId) <= 0 || req.params.gradeId % 1 !== 0) {
         res.status(400).json({
             error: 'grade ID should be numeric'
         })
         return;
     } else 
     if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined || 
-        typeof parseInt(req.body.score) !== 'number' || req.body.score % 1 !== 0 || req.body.score < 1 || req.body.score > 100 ) {
+        req.body.score % 1 !== 0 || req.body.score < 0 || req.body.score > 100 ) {
             res.status(400).json({
                 error: 'Parameters values are not correct'
             })
@@ -108,7 +108,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     db.query(sql, values)
         .then(result => {
             if (result.rows.length > 0) {
-                res.status(201).json(result.rows)
+                res.status(200).json(result.rows)
             } else {
                 res.status(404).json({
                     error: 'Grade Id does not exist'
@@ -127,7 +127,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
 // deletes a grade from the "grades" table
 
 app.delete('/api/grades/:gradeId', (req, res, next) => {
-    if (parseInt(req.params.gradeId) <= 0 || typeof parseInt(req.params.gradeId) !== 'number' || req.params.gradeId % 1 !== 0) {
+    if (parseInt(req.params.gradeId) <= 0 || req.params.gradeId % 1 !== 0) {
         res.status(400).json({
             error: 'grade ID should be numeric'
         })
@@ -138,17 +138,20 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
         where "gradeId" = $1
         returning *
      `;
+
     const values = [req.params.gradeId]
 
     db.query(sql, values)
         .then(result => {
             if (result.rows.length > 0) {
-                res.status(204).json(result.rows)
+                console.log('hi 204');
+                res.status(204).json()
             } else {
                 res.status(404).json({
                     error: 'Grade Id does not exist'
                 })
             }
+            return;
         })
         .catch(err => {
             console.error(err);
